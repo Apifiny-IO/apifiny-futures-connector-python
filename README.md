@@ -47,8 +47,10 @@ Create Order
 ```python
 from apifiny_futures.rest_api import API as Client
 
+# If you get the error:"Timestamp for this request is outside of the recvWindow", 
+# you can calibrate local time or set recv_window
 # api key/secret are required for trade endpoints
-client = Client(venue="BINANCE", key='<api_key>', secret='<api_secret>')
+client = Client(venue="BINANCE", key='<api_key>', secret='<api_secret>', recv_window=10000)
 
 # Post a new order
 params = {
